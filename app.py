@@ -5,7 +5,13 @@ db = SqLiteDatabase("Gastos.db")
 
 class Id(Model):
     nome = CharField()
-    email = CharField()
+    data = CharField()
+    valor = CharField()
+
+    class Meta:
+        database = db
+
+class
 
 app = Flask(__name__)
 
