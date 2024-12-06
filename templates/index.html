@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização da Tabela</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css" />
+</head>
+<body>
+    <h1 style="text-align:center;">Tabela do Banco de Dados</h1>
+    <table>
+        <thead>
+            <tr>
+                {% for header in headers %}
+                    <th>{{ header }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    {% for cell in row %}
+                        <td>{{ cell }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <footer>
+        <form action="/" method="POST">
+            <input type="text" name="Nome_do_gasto" placeholder="Nome do gasto " required>
+            <input type="text" name="Data" placeholder="Data" required>
+            <input type="text" name="Valor" placeholder="valor" required>
+            <button type="submit">Adicionar</button>
+        </form>
+        <form action="/delete" method="POST">
+            <input type="hidden" name="ID" value="{{ row[0] }}">
+            <button type="submit" style="color: red;">Apagar</button>
+        </form>
+    </footer>
+</body>
+</html>
