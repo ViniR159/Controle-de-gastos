@@ -22,6 +22,12 @@
                     {% for cell in row %}
                         <td>{{ cell }}</td>
                     {% endfor %}
+                    <td>
+                        <form action="/delete" method="POST">
+                          <input type="hidden" name="ID" value="{{ row[0] }}">
+                          <button class="delete" type="submit">Apagar</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
@@ -29,14 +35,13 @@
     <footer>
         <form action="/" method="POST">
             <input type="text" name="Nome_do_gasto" placeholder="Nome do gasto " required>
-            <input type="text" name="Data" placeholder="Data" required>
+            <input type="text" name="Data" pattern="\d{2}/\d{2}/\d{2}" placeholder="00/00/00" required>
             <input type="text" name="Valor" placeholder="valor" required>
             <button type="submit">Adicionar</button>
         </form>
-        <form action="/delete" method="POST">
-            <input type="hidden" name="ID" value="{{ row[0] }}">
-            <button type="submit" style="color: red;">Apagar</button>
-        </form>
     </footer>
+    <script>
+        $("#data").inputmask("99/99/99");
+    </script>
 </body>
 </html>
