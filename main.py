@@ -3,18 +3,19 @@ import sqlite3
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET", "POST", "DELETE"])
+@app.route("/", methods=["GET", "POST"])
 def tabela_site():
     bancodedados = sqlite3.connect("gastos.db")
     cursor = bancodedados.cursor()
 
-    if request.method == "POST ":
+    if request.method == "POST":
         nome_de_gasto = request.form["Nome_do_gasto"]
         Data = request.form["Data"]
         Valor = request.form["Valor"]
 
         cursor.execute("INSERT INTO Gastos (nome, Data, Valor) VALUES (?, ?, ?)", (nome_de_gasto, Data, Valor))
         bancodedados.commit()
+        print(bancodedados)
 
         return redirect('/')
 
@@ -29,11 +30,11 @@ def tabela_site():
 
 @app.route("/delete", methods=["POST"])
 def delete_row():
-    row_id = request.form["id"]
+    row_id = request.form["ID"]
 
     bancodedados = sqlite3.connect("gastos.db")
     cursor = bancodedados.cursor()
-    cursor.execute("DELETE FROM Gastos WHERE id = ?", (row_id,))
+    cursor.execute("DELETE FROM Gastos WHERE ID = ?", (row_id,))
     bancodedados.commit()
     bancodedados.close()
 

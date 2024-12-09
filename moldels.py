@@ -43,9 +43,9 @@ def ver():
 
 # C de Create CRUD
 
-# gastoteste = Gasto(Nome="aaaaa", Data="00.00.00", Valor="125.5") 
-# session.add(gastoteste)
-# session.commit()
+gastoteste = Gasto(Nome="aaaaa", Data="00.00.00", Valor="125.5") 
+session.add(gastoteste)
+session.commit()
 
 # R de Read CRUD
 

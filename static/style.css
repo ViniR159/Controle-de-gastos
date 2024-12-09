@@ -3,6 +3,10 @@ body{
     margin: 0%;
 }
 
+.delete {
+    color: red;
+}
+
 table {
     width: 80%;
     margin: auto;
