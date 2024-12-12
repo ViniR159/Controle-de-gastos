@@ -1,0 +1,67 @@
+body{
+    width: 100%;
+    margin: auto;
+    background-color: #f4f4f4;
+}
+
+h1{
+    position: relative;
+    z-index: 99;
+}
+
+.input {
+    color: gray;
+    border-radius: 1em;
+    border: 0.2em solid red;
+}
+
+.delete {
+    color: red;
+    border-radius: 2em;
+    border: 0.2em solid red;
+}
+
+.adicionar {
+    color: green;
+    border-radius: 2em;
+    border: 0.2em solid green;
+}
+
+table {
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    z-index: 99;
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    background-color: #f4f4f4;
+    position: relative;
+    z-index: 99;
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    text-align: center;
+}
+
+.tabeladelete {
+    display: inline-block;
+}
+
+footer {
+    position: relative;
+    z-index: 99;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.dado {
+    z-index: 0;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 100px;
+}

@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualização da Tabela</title>
-    <link rel="stylesheet" type="text/css" href="static/style.css" />
+    <link rel="stylesheet" type="text/css" href="static/CSS/style.css" />
 </head>
 <body>
-    <h1 style="text-align:center;">Tabela do Banco de Dados</h1>
+    <img class="dado" src="static/Imagem/dado.gif" alt="">
+    <h1 style="text-align:center;">Tabela de banco de dados
+        para controle de gastos
+    </h1>
     <table>
         <thead>
             <tr>
@@ -22,9 +25,9 @@
                     {% for cell in row %}
                         <td>{{ cell }}</td>
                     {% endfor %}
-                    <td>
-                        <form action="/delete" method="POST">
-                          <input type="hidden" name="ID" value="{{ row[0] }}">
+                    <td class="tabeladelete">
+                        <form  action="/delete" method="POST">
+                          <input class="input" type="hidden" name="ID" value="{{ row[0] }}">
                           <button class="delete" type="submit">Apagar</button>
                         </form>
                     </td>
@@ -37,11 +40,9 @@
             <input type="text" name="Nome_do_gasto" placeholder="Nome do gasto " required>
             <input type="text" name="Data" pattern="\d{2}/\d{2}/\d{2}" placeholder="00/00/00" required>
             <input type="text" name="Valor" placeholder="valor" required>
-            <button type="submit">Adicionar</button>
+            <button class="adicionar" type="submit">Adicionar</button>
         </form>
     </footer>
-    <script>
-        $("#data").inputmask("99/99/99");
-    </script>
+
 </body>
 </html>
