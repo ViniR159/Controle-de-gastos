@@ -105,5 +105,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou sub
 ## Licença
 Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
 
-
-![image](https://github.com/user-attachments/assets/acf76f99-5340-46cf-ac79-f08f0acc9749)
+![image](https://github.com/user-attachments/assets/826a8dbb-746b-44b9-9676-2ae4db3e3a79)
