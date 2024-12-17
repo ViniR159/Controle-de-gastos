@@ -34,6 +34,13 @@
                 </tr>
             {% endfor %}
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="{{ headers|length - 1 }}" style="text-align: right; font-weight: bold;">Total:</td>
+                <td style="font-weight: bold;">{{ soma_total }}</td>
+                <td></td>
+            </tr>
+        </tfoot>
     </table>
     <footer>
         <form action="/" method="POST">
