@@ -4,7 +4,6 @@ import sqlite3
 app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
-@app.route("/", methods=["GET", "POST"])
 def tabela_site():
     bancodedados = sqlite3.connect("gastos.db")
     cursor = bancodedados.cursor()
@@ -24,11 +23,15 @@ def tabela_site():
     headers = [description[0] for description in cursor.description]
 
     cursor.execute('SELECT SUM(Valor) FROM Gastos')
-    soma_total = cursor.fetchone()[0] or 0  
+    soma_total = cursor.fetchone()[0] or 0 
+
+    soma_total_formatado = f"R${soma_total:,.2f}"
 
     bancodedados.close()
 
-    return render_template("index.html", headers=headers, data=data, soma_total=soma_total)
+    return render_template("index.html", headers=headers, data=data, soma_total=soma_total_formatado)
+
+
 
 
 @app.route("/delete", methods=["POST"])
