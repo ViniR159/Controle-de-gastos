@@ -41,7 +41,7 @@ Este projeto consiste em uma API desenvolvida em Python utilizando Flask e SQLAl
 
 4. Execute o script principal:
    ```bash
-   python app.py
+   python main.py
    ```
 
 5. Acesse a API no navegador ou em um cliente HTTP (como Postman):
